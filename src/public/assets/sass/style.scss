@@ -1,0 +1,148 @@
+$sidebar-width: 250px;
+$sidebar-header-height: 50px;
+$sidebar-pane-height: calc(100% - 50px);
+$postbox-height: 75px;
+$message-box-height: calc(100% - 75px);
+$message-pane-width: calc(100% - 500px);
+
+* {
+    box-sizing: border-box;
+}
+
+body, html, #application {
+    min-height: 100%;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    font-size: 16px;
+    background-color: #F6F6F6;
+}
+
+.room-list,
+.help {
+    position: fixed;
+    top: 0px;
+    width: $sidebar-width;
+    height: 100%;
+    color: #EFE;
+
+    .header {
+        font-size: 20px;
+        height: $sidebar-header-height;
+        padding: 13px;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    .content {
+        height: $sidebar-pane-height;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+}
+
+.room-list {
+    left: 0px;
+    background-color: #333;
+
+    .room {
+        padding: 10px 15px;
+        border-top: 1px outset #666;
+        cursor: pointer;
+    }
+
+    .room.active {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+}
+
+.help {
+    right: 0px;
+    background-color: #666;
+
+    .item {
+        padding: 10px;
+
+        .command {
+            font-weight: bold;
+            display: block;
+        }
+    }
+}
+
+.message-box,
+.post-message-box {
+    position: fixed;
+    left: $sidebar-width;
+    width: $message-pane-width;
+}
+
+.message-box {
+    top: 0px;
+    height: $message-box-height;
+    overflow-x: auto;
+    overflow-y: scroll;
+    background-color: #FDFDFD;
+    color: #111;
+    padding: 5px;
+
+    .message {
+        margin: 5px;
+
+        > * {
+            vertical-align: top;
+        }
+
+        .time {
+            display: inline-block;
+            width: 50px;
+            font-size: 10px;
+            color: #666;
+        }
+
+        .text {
+            display: inline-block;
+        }
+    }
+
+    .message.chat {
+        .source {
+            color: #33C;
+            font-weight: bold;
+        }
+        .source:after {
+            content: ":"
+        }
+    }
+
+    .message.meta .source,
+    .message.meta .text {
+        color: #999;
+        font-style: italic;
+    }
+
+    .message.error {
+        color: #911;
+    }
+}
+
+.post-message-box {
+    bottom: 0px;
+    height: $postbox-height;
+    background-color: #999;
+
+    textarea, button {
+        font-size: 16px;
+        margin: 0px;
+        height: 100%;
+        vertical-align: top;
+        resize: none;
+    }
+
+    textarea {
+        width: calc(100% - 55px);
+    }
+    button {
+        width: 50px;
+    }
+}

@@ -1,0 +1,102 @@
+* {
+  box-sizing: border-box; }
+
+body, html, #application {
+  min-height: 100%; }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  background-color: #F6F6F6; }
+
+.room-list,
+.help {
+  position: fixed;
+  top: 0px;
+  width: 250px;
+  height: 100%;
+  color: #EFE; }
+  .room-list .header,
+  .help .header {
+    font-size: 20px;
+    height: 50px;
+    padding: 13px;
+    background-color: rgba(0, 0, 0, 0.2); }
+  .room-list .content,
+  .help .content {
+    height: calc(100% - 50px);
+    overflow-x: hidden;
+    overflow-y: auto; }
+
+.room-list {
+  left: 0px;
+  background-color: #333; }
+  .room-list .room {
+    padding: 10px 15px;
+    border-top: 1px outset #666;
+    cursor: pointer; }
+  .room-list .room.active {
+    background-color: rgba(255, 255, 255, 0.2); }
+
+.help {
+  right: 0px;
+  background-color: #666; }
+  .help .item {
+    padding: 10px; }
+    .help .item .command {
+      font-weight: bold;
+      display: block; }
+
+.message-box,
+.post-message-box {
+  position: fixed;
+  left: 250px;
+  width: calc(100% - 500px); }
+
+.message-box {
+  top: 0px;
+  height: calc(100% - 75px);
+  overflow-x: auto;
+  overflow-y: scroll;
+  background-color: #FDFDFD;
+  color: #111;
+  padding: 5px; }
+  .message-box .message {
+    margin: 5px; }
+    .message-box .message > * {
+      vertical-align: top; }
+    .message-box .message .time {
+      display: inline-block;
+      width: 50px;
+      font-size: 10px;
+      color: #666; }
+    .message-box .message .text {
+      display: inline-block; }
+  .message-box .message.chat .source {
+    color: #33C;
+    font-weight: bold; }
+  .message-box .message.chat .source:after {
+    content: ":"; }
+  .message-box .message.meta .source,
+  .message-box .message.meta .text {
+    color: #999;
+    font-style: italic; }
+  .message-box .message.error {
+    color: #911; }
+
+.post-message-box {
+  bottom: 0px;
+  height: 75px;
+  background-color: #999; }
+  .post-message-box textarea, .post-message-box button {
+    font-size: 16px;
+    margin: 0px;
+    height: 100%;
+    vertical-align: top;
+    resize: none; }
+  .post-message-box textarea {
+    width: calc(100% - 55px); }
+  .post-message-box button {
+    width: 50px; }
+
+/*# sourceMappingURL=style.css.map */

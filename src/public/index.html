@@ -2,8 +2,61 @@
 <html>
     <head>
         <title>It's a Chat</title>
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+        <link href="assets/bower_components/reset-css/reset.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/markdown.css" rel="stylesheet" type="text/css" />
+        <script src="assets/bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="assets/bower_components/knockout/dist/knockout.js"></script>
+        <script src="assets/bower_components/falconjs/falcon.min.js"></script>
+        <script src="assets/bower_components/falconjs/adapters/falcon.jquery_adapter.min.js"></script>
+        <script src="assets/bower_components/marked/lib/marked.js"></script>
     </head>
     <body>
-        my god
+        <div id="application"></div>
+        <template id="chat_tmpl">
+            <section class="room-list">
+                <header class="header">Rooms (<!-- ko text: $view.nickname() --><!-- /ko -->)</header>
+                <section class="content" data-bind="foreach: $view.channels">
+                    <div class="room" data-bind="css: {'active': active}, click: $view.switchChannel"><!-- ko text: name --><!-- /ko --></div>
+                </section>
+            </section>
+            <section class="help">
+                <header class="header">Help</header>
+                <section class="content">
+                    <ul>
+                        <li class="item">
+                            <span class="command">/nick &lt;name&gt;</span>
+                            <span class="explanation">Change your name</span>
+                        </li>
+                        <li class="item">
+                            <span class="command">/me some words</span>
+                            <span class="explanation">Express yourself</span>
+                        </li>
+                        <li class="item">
+                            <span class="command">/newchannel &lt;name&gt;</span>
+                            <span class="explanation">Open a new channel</span>
+                        </li>
+                        <li class="item">
+                            <span class="command">/removechannel</span>
+                            <span class="explanation">Close the current channel</span>
+                        </li>
+                    </ul>
+                </section>
+            </section>
+            <section class="message-box" id="messages" data-bind="foreach: {data: $view.active_channel().messages, afterRender: $view.scrollMessages}">
+                <div class="message" data-bind="css: type">
+                    <div class="time"><!-- ko text: time --><!-- /ko --></div>
+                    <span class="source"><!-- ko text: source --><!-- /ko --></span>
+                    <div class="text" data-bind="html: $view.processed_text($data)"></div>
+                </div>
+            </section>
+            <form data-bind="submit: $view.postMessage" class="post-message-box">
+                <textarea name="message" class="quicksubmit" placeholder="Type a message. Press enter to send. Use markdown if you want."></textarea>
+                <button type="submit">Post</button>
+            </form>
+        </template>
+        <script src="assets/js/app.js"></script>
     </body>
 </html>

@@ -1,6 +1,8 @@
-# A sample Gemfile
+ruby "2.1.2"
+
 source "https://rubygems.org"
 
-# gem "rails"
+gem "json"
 gem "sinatra"
-
+gem "pg"
+gem "sequel"

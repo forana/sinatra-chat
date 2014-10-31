@@ -1,0 +1,31 @@
+/** undo some things from reset.css **/
+
+.chat {
+    code, pre {
+        font-family: "Inconsolata", monospaced;
+        background-color: #FFC;
+    }
+
+    em {
+        font-style: italic;
+    }
+
+    strong {
+        font-weight: bold;
+    }
+
+    ul, ol {
+        li {
+            list-style-position: outside;
+            margin-left: 20px;
+        }
+    }
+
+    ul li {
+        list-style-type: disc;
+    }
+
+    ol li {
+        list-style-type: decimal;
+    }
+}

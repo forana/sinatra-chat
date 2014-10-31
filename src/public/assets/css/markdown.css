@@ -1,0 +1,17 @@
+/** undo some things from reset.css **/
+.chat code, .chat pre {
+  font-family: "Inconsolata", monospaced;
+  background-color: #FFC; }
+.chat em {
+  font-style: italic; }
+.chat strong {
+  font-weight: bold; }
+.chat ul li, .chat ol li {
+  list-style-position: outside;
+  margin-left: 20px; }
+.chat ul li {
+  list-style-type: disc; }
+.chat ol li {
+  list-style-type: decimal; }
+
+/*# sourceMappingURL=markdown.css.map */
