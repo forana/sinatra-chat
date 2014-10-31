@@ -1,0 +1,42 @@
+{
+  "name": "Falcon JS",
+  "version": "0.10.2",
+  "homepage": "https://github.com/stoodder/falconjs",
+  "authors": [
+    "Rick Allen <rick@rokkincat.com>"
+  ],
+  "description": "Falcon JS Provides a simple MVC structure for Knockout JS",
+  "main": [
+    "falcon.js",
+    "falcon.min.js"
+  ],
+  "keywords": [
+    "Knockout",
+    "Javascript",
+    "MVC",
+    "MVVM"
+  ],
+  "license": "MIT",
+  "private": false,
+  "ignore": [
+    "node_modules",
+    "bower_components",
+    "tests",
+    "coffee",
+    "falcon.sublime-project",
+    "falcon.sublime-workspace",
+    "Gruntfile.coffee",
+    "package.json",
+    "TODO.txt"
+  ],
+  "_release": "0.10.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.10.2",
+    "commit": "f74262878321bd796d5e38e58ecf437730b63a04"
+  },
+  "_source": "git://github.com/stoodder/falconjs.git",
+  "_target": "~0.10.2",
+  "_originalSource": "falconjs",
+  "_direct": true
+}

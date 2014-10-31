@@ -1,0 +1,8 @@
+{
+  "name": "sinatra-chat",
+  "dependencies": {
+    "falconjs": "~0.10.2",
+    "jquery": "~2.1.1",
+    "reset-css": "~2.0.20110126"
+  }
+}
