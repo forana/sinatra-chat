@@ -46,3 +46,4 @@ Somebody could make these, if they really wanted.
 * Replace the `mergeFetch` workaround with a more sane usage of Falcon
 * Resolve the TODO in app.js
 * Split app.js up into sane chunks
+* Have sinatra process sass rather than have to watch/commit
